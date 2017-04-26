@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.michaelsimionidi.ci346.Ci346ProjectApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.224 sec - in com.michaelsimionidi.ci346.Ci346ProjectApplicationTests
