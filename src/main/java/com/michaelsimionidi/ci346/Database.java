@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import java.util.ArrayList;
+import java.util.*;
 
 public class Database
 {
@@ -28,5 +28,21 @@ public class Database
 			// Pass the exception up for handling in the application.
 			throw e;
 		}
+	}
+	
+	public ResultSet execute(String sql) throws Exception 
+	{
+		try 
+		{
+			Connection databaseConnection = DriverManager.getConnection("jdbc:mysql://localhost:3300/employees","root","usbw");
+			Statement dbStatement = databaseConnection.createStatement();  
+			ResultSet dbResults = dbStatement.executeQuery(sql);
+
+			return dbResults;
+		}
+		catch(Exception e) {
+			throw e;
+		}
+		
 	}
 }
