@@ -14,19 +14,19 @@ public class BackEnd {
 	
 	@RequestMapping(value = "/api/employees", method= RequestMethod.GET)
 	public String GETIndex() {
-		return "hi";
+		return "Get";
 	}
 	@RequestMapping(value = "/api/employees/{id}", method= RequestMethod.POST)
 	public String POSTIndex() {
-		return "hi";
+		return "Post";
 	}
 	@RequestMapping(value = "/api/employees", method= RequestMethod.PUT)
 	public String PUTIndex() {
-		return "hi";
+		return "Put";
 	}
 	@RequestMapping(value = "/api/employee/{id}", method= RequestMethod.DELETE, produces = "plain/text")
 	public String DELETEIndex() {
-		return "hi";
+		return "Delete";
 	}
 	
 }
