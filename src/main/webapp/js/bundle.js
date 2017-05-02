@@ -9559,6 +9559,7 @@ var EmployeeList = function (_React$Component) {
         key: 'render',
         value: function render() {
 
+            console.log("EmployeeList::render");
             console.log(this.props);
 
             var employeelist = Object.values(this.props.employees).map(function (employeeObject) {
