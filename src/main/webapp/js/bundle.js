@@ -9561,7 +9561,7 @@ var EmployeeList = function (_React$Component) {
             var employeelist = Object.values(this.props.employees).map(function (employeeObject) {
                 return _react2.default.createElement(Employee, { employeeObject: JSON.parse(employeeObject) });
             });
-
+            console.log(this.props);
             return _react2.default.createElement(
                 'table',
                 null,
@@ -9622,6 +9622,7 @@ var Employee = function (_React$Component2) {
     _createClass(Employee, [{
         key: 'render',
         value: function render() {
+
             return _react2.default.createElement(
                 'tr',
                 { id: "employee-" + this.props.employeeObject['PersonID'] },

@@ -6,7 +6,7 @@ class EmployeeList extends React.Component {
         var employeelist = Object.values(this.props.employees).map(employeeObject =>
             <Employee employeeObject = {JSON.parse(employeeObject)}/>
         );
-
+        console.log(this.props)
         return(
             <table>
                 <thead>
@@ -28,6 +28,7 @@ class EmployeeList extends React.Component {
 
 class Employee extends React.Component {
     render() {
+
         return(
             <tr id={"employee-"+this.props.employeeObject['PersonID']}>
 //            	<td>{this.props.employeeObject['PersonID']}</td>
