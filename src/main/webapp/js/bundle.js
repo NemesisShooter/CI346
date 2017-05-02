@@ -9558,10 +9558,14 @@ var EmployeeList = function (_React$Component) {
     _createClass(EmployeeList, [{
         key: 'render',
         value: function render() {
+
+            console.log("EmployeeList::render");
+            console.log(this.props);
+
             var employeelist = Object.values(this.props.employees).map(function (employeeObject) {
                 return _react2.default.createElement(Employee, { employeeObject: JSON.parse(employeeObject) });
             });
-            console.log(this.props);
+
             return _react2.default.createElement(
                 'table',
                 null,
@@ -9622,11 +9626,9 @@ var Employee = function (_React$Component2) {
     _createClass(Employee, [{
         key: 'render',
         value: function render() {
-
             return _react2.default.createElement(
                 'tr',
                 { id: "employee-" + this.props.employeeObject['PersonID'] },
-                '//             ',
                 _react2.default.createElement(
                     'td',
                     null,
@@ -9662,33 +9664,35 @@ var Employee = function (_React$Component2) {
 var FrontEnd = function (_React$Component3) {
     _inherits(FrontEnd, _React$Component3);
 
-    function FrontEnd(props) {
+    function FrontEnd() {
         _classCallCheck(this, FrontEnd);
 
-        var _this3 = _possibleConstructorReturn(this, (FrontEnd.__proto__ || Object.getPrototypeOf(FrontEnd)).call(this, props));
-
-        _this3.state = { employees: [] };
-        return _this3;
+        return _possibleConstructorReturn(this, (FrontEnd.__proto__ || Object.getPrototypeOf(FrontEnd)).apply(this, arguments));
     }
 
     _createClass(FrontEnd, [{
-        key: 'componentDidMount',
-        value: function componentDidMount() {
+        key: 'getEmployeeList',
+        value: function getEmployeeList() {
+            var list = {};
+
             $.ajax({
                 method: "GET",
-                async: true,
+                async: false,
                 url: "./api/employees"
             }).done(function (msg) {
-
                 console.log(msg);
-
-                this.state = { employees: JSON.parse(msg) };
+                list = JSON.parse(msg);
             });
+
+            return list;
         }
     }, {
         key: 'render',
         value: function render() {
-            return _react2.default.createElement(EmployeeList, { employees: this.state.employees });
+            console.log("returning employees");
+            console.log(this.state);
+
+            return _react2.default.createElement(EmployeeList, { employees: this.getEmployeeList() });
         }
     }]);
 

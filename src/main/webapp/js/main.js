@@ -3,10 +3,14 @@ import {render} from 'react-dom';
 
 class EmployeeList extends React.Component {
     render() {
+
+    	console.log("EmployeeList::render");
+    	console.log(this.props);
+    	
         var employeelist = Object.values(this.props.employees).map(employeeObject =>
             <Employee employeeObject = {JSON.parse(employeeObject)}/>
         );
-        console.log(this.props)
+
         return(
             <table>
                 <thead>
@@ -28,10 +32,9 @@ class EmployeeList extends React.Component {
 
 class Employee extends React.Component {
     render() {
-
         return(
             <tr id={"employee-"+this.props.employeeObject['PersonID']}>
-//            	<td>{this.props.employeeObject['PersonID']}</td>
+            	<td>{this.props.employeeObject['PersonID']}</td>
                 <td>{this.props.employeeObject['LastName']}</td>
                 <td>{this.props.employeeObject['FirstName']}</td>
                 <td>{this.props.employeeObject['Shift']}</td>
@@ -43,27 +46,27 @@ class Employee extends React.Component {
 
 class FrontEnd extends React.Component {
 
-	constructor(props) {
-        super(props);
-        this.state = {employees: []};
-    }
-
-    componentDidMount() {
+    getEmployeeList() {
+    	var list = {};
+    	
         $.ajax({
             method: "GET",
-            async: true,
+            async: false,
             url: "./api/employees",
         }).done(function(msg) {
-        	
         	console.log(msg);
-        	
-            this.state = {employees: JSON.parse(msg)};
+            list = JSON.parse(msg);
         });
+        
+        return list;
     }
 
     render() {
+    	console.log("returning employees");
+    	console.log(this.state);
+    	
         return( 
-            <EmployeeList employees = {this.state.employees} />
+            <EmployeeList employees = {this.getEmployeeList()} />
         );
     }
 }
