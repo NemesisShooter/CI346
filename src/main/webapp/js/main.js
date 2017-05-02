@@ -4,7 +4,6 @@ import {render} from 'react-dom';
 class EmployeeList extends React.Component {
     render() {
 
-    	console.log("EmployeeList::render");
     	console.log(this.props);
     	
         var employeelist = Object.values(this.props.employees).map(employeeObject =>
