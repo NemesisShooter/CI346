@@ -10,5 +10,13 @@ This guide gives instructions on setting up this project on `Windows`.
 
 ## Database
 I am using USBwebserver to create database.
+
+Settings:
 Apachi port: 8888
 MySQL port: 3300
+
+To install database:
+1. Log in to web interface of USBwebserver.
+2. In the web interface of USBwebserver click Databases and create database called "employees".
+3. Inside the database click "Import", then in the project folder go to folder called "DB" and import file called "employees.sql".
+4. The database all set and running.

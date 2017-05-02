@@ -16,7 +16,7 @@ public class Database
 
 			Connection databaseConnection = DriverManager.getConnection("jdbc:mysql://localhost:3300/employees","root","usbw");
 			Statement dbStatement = databaseConnection.createStatement();  
-			ResultSet dbResults = dbStatement.executeQuery("SELECT * FROM employees WHERE 1 LIMIT 1");
+			ResultSet dbResults = dbStatement.executeQuery("SELECT * FROM employees");
 			
 			while(dbResults.next()) {
 				System.out.println(dbResults.getInt(1) + "  " + dbResults.getString(2) + "  " + dbResults.getString(3) + "  " + dbResults.getString(4) + "  " + dbResults.getString(5));  

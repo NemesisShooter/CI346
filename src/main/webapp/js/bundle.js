@@ -9546,30 +9546,155 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var WhateverYouWant = function (_React$Component) {
-	_inherits(WhateverYouWant, _React$Component);
+var EmployeeList = function (_React$Component) {
+    _inherits(EmployeeList, _React$Component);
 
-	function WhateverYouWant() {
-		_classCallCheck(this, WhateverYouWant);
+    function EmployeeList() {
+        _classCallCheck(this, EmployeeList);
 
-		return _possibleConstructorReturn(this, (WhateverYouWant.__proto__ || Object.getPrototypeOf(WhateverYouWant)).apply(this, arguments));
-	}
+        return _possibleConstructorReturn(this, (EmployeeList.__proto__ || Object.getPrototypeOf(EmployeeList)).apply(this, arguments));
+    }
 
-	_createClass(WhateverYouWant, [{
-		key: 'render',
-		value: function render() {
-			return _react2.default.createElement(
-				'h1',
-				null,
-				' hello world '
-			);
-		}
-	}]);
+    _createClass(EmployeeList, [{
+        key: 'render',
+        value: function render() {
+            var employeelist = Object.values(this.props.employees).map(function (employeeObject) {
+                return _react2.default.createElement(Employee, { employeeObject: JSON.parse(employeeObject) });
+            });
 
-	return WhateverYouWant;
+            return _react2.default.createElement(
+                'table',
+                null,
+                _react2.default.createElement(
+                    'thead',
+                    null,
+                    _react2.default.createElement(
+                        'tr',
+                        null,
+                        _react2.default.createElement(
+                            'th',
+                            null,
+                            'ID |'
+                        ),
+                        _react2.default.createElement(
+                            'th',
+                            null,
+                            'Last Name |'
+                        ),
+                        _react2.default.createElement(
+                            'th',
+                            null,
+                            'First Name |'
+                        ),
+                        _react2.default.createElement(
+                            'th',
+                            null,
+                            'Shift |'
+                        ),
+                        _react2.default.createElement(
+                            'th',
+                            null,
+                            'Job'
+                        )
+                    )
+                ),
+                _react2.default.createElement(
+                    'tbody',
+                    null,
+                    employeelist
+                )
+            );
+        }
+    }]);
+
+    return EmployeeList;
 }(_react2.default.Component);
 
-(0, _reactDom.render)(_react2.default.createElement(App, null), document.getElementById('target'));
+var Employee = function (_React$Component2) {
+    _inherits(Employee, _React$Component2);
+
+    function Employee() {
+        _classCallCheck(this, Employee);
+
+        return _possibleConstructorReturn(this, (Employee.__proto__ || Object.getPrototypeOf(Employee)).apply(this, arguments));
+    }
+
+    _createClass(Employee, [{
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement(
+                'tr',
+                { id: "employee-" + this.props.employeeObject['PersonID'] },
+                '//             ',
+                _react2.default.createElement(
+                    'td',
+                    null,
+                    this.props.employeeObject['PersonID']
+                ),
+                _react2.default.createElement(
+                    'td',
+                    null,
+                    this.props.employeeObject['LastName']
+                ),
+                _react2.default.createElement(
+                    'td',
+                    null,
+                    this.props.employeeObject['FirstName']
+                ),
+                _react2.default.createElement(
+                    'td',
+                    null,
+                    this.props.employeeObject['Shift']
+                ),
+                _react2.default.createElement(
+                    'td',
+                    null,
+                    this.props.employeeObject['Job']
+                )
+            );
+        }
+    }]);
+
+    return Employee;
+}(_react2.default.Component);
+
+var FrontEnd = function (_React$Component3) {
+    _inherits(FrontEnd, _React$Component3);
+
+    function FrontEnd(props) {
+        _classCallCheck(this, FrontEnd);
+
+        var _this3 = _possibleConstructorReturn(this, (FrontEnd.__proto__ || Object.getPrototypeOf(FrontEnd)).call(this, props));
+
+        _this3.state = { employees: [] };
+        return _this3;
+    }
+
+    _createClass(FrontEnd, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            $.ajax({
+                method: "GET",
+                async: true,
+                url: "./api/employees"
+            }).done(function (msg) {
+
+                console.log(msg);
+
+                this.state = { employees: JSON.parse(msg) };
+            });
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement(EmployeeList, { employees: this.state.employees });
+        }
+    }]);
+
+    return FrontEnd;
+}(_react2.default.Component);
+
+(0, _reactDom.render)(_react2.default.createElement(FrontEnd, null), document.getElementById('target'));
 
 /***/ }),
 /* 83 */

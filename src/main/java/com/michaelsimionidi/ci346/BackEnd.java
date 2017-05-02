@@ -25,11 +25,11 @@ public class BackEnd {
 				while (dbResults.next()) {
 					HashMap<String, String> items = new HashMap<String, String>();
 
-					items.put("PersonID", String.valueOf(dbResults.getInt(0)));
-					items.put("LastName", dbResults.getString(1));
-					items.put("FirstName", dbResults.getString(2));
-					items.put("Shift", dbResults.getString(3));
-					items.put("Job", dbResults.getString(4));
+					items.put("PersonID", String.valueOf(dbResults.getInt(1)));
+					items.put("LastName", dbResults.getString(2));
+					items.put("FirstName", dbResults.getString(3));
+					items.put("Shift", dbResults.getString(4));
+					items.put("Job", dbResults.getString(5));
 					
 					finalResults.put(String.valueOf(finalResults.size()), gson.toJson(items));
 				}
