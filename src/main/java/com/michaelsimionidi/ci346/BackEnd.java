@@ -3,6 +3,7 @@ package com.michaelsimionidi.ci346;
 import java.sql.ResultSet;
 import java.util.HashMap;
 
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -42,7 +43,7 @@ public class BackEnd {
 			finalResults.put("error", "Exception Caught: " + e.getLocalizedMessage());
 		}
 		
-return gson.toJson(finalResults);
+		return gson.toJson(finalResults);
 	}
 	
 	@RequestMapping(value = "/api/employees/{id}", method= RequestMethod.POST)
@@ -53,13 +54,26 @@ return gson.toJson(finalResults);
 	public String PUTIndex() {
 		return "Put";
 	}
-	@RequestMapping(value = "/api/employee/{id}", method= RequestMethod.DELETE, produces = "plain/text")
-	public String DELETEIndex() {
-		//"UPDATE employees SET em_deleted = 1 WHERE em_id = " + PersonID + " LIMIT 1"
+	
+	@RequestMapping(value = "/api/employee/{id}", method = RequestMethod.DELETE)
+	public String DELIndex(@PathVariable("id") int id) {
+		HashMap <String, String> finalResults = new HashMap <String, String>();
+		try {
+			Database db = new Database();
+			
+			boolean error = db.update("DELETE FROM employees WHERE PersonID = " + String.valueOf(id) + ";");
+			if(!error) {
+				finalResults.put("message", "complete.");
+			}
+			else {
+				finalResults.put("error", "No employees found.");
+			}
+		}
+		catch(Exception e) {
+			finalResults.put("error", "Exception Caught: " + e.getLocalizedMessage());
+		}
 		
-		return "Delete";
-		
-		
+		return gson.toJson(finalResults);
 	}
 	
 }

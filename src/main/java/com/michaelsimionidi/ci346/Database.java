@@ -29,7 +29,7 @@ public class Database
 			throw e;
 		}
 	}
-	
+
 	public ResultSet execute(String sql) throws Exception 
 	{
 		try 
@@ -39,6 +39,22 @@ public class Database
 			ResultSet dbResults = dbStatement.executeQuery(sql);
 
 			return dbResults;
+		}
+		catch(Exception e) {
+			throw e;
+		}
+		
+	}
+	
+	public boolean update(String sql) throws Exception 
+	{
+		try 
+		{
+			Connection databaseConnection = DriverManager.getConnection("jdbc:mysql://localhost:3300/employees","root","usbw");
+			Statement dbStatement = databaseConnection.createStatement();  
+			boolean error = dbStatement.execute(sql);
+
+			return error;
 		}
 		catch(Exception e) {
 			throw e;

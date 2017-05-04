@@ -19,6 +19,7 @@ class EmployeeList extends React.Component {
                         <th>First Name</th>
                         <th>Shift</th>
                         <th>Job</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -29,6 +30,19 @@ class EmployeeList extends React.Component {
     }
 }
 
+var ButtonController = {
+	deleteEmployee: function(id){
+        $.ajax({
+            method: "DELETE",
+            async: false,
+            url: "./api/employee/" + id,
+        }).done(function(msg) {
+        	console.log(msg);
+        	render(<FrontEnd />, document.getElementById('target'));
+        });
+	}
+};
+
 class Employee extends React.Component {
     render() {
         return(
@@ -38,6 +52,7 @@ class Employee extends React.Component {
                 <td>{this.props.employeeObject['FirstName']}</td>
                 <td>{this.props.employeeObject['Shift']}</td>
                 <td>{this.props.employeeObject['Job']}</td>
+                <td><a onClick={ButtonController.deleteEmployee.bind(this, this.props.employeeObject['PersonID'])}>Delete</a></td>
             </tr>
         );
     }

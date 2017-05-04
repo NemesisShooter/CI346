@@ -9598,7 +9598,8 @@ var EmployeeList = function (_React$Component) {
                             'th',
                             null,
                             'Job'
-                        )
+                        ),
+                        _react2.default.createElement('th', null)
                     )
                 ),
                 _react2.default.createElement(
@@ -9612,6 +9613,19 @@ var EmployeeList = function (_React$Component) {
 
     return EmployeeList;
 }(_react2.default.Component);
+
+var ButtonController = {
+    deleteEmployee: function deleteEmployee(id) {
+        $.ajax({
+            method: "DELETE",
+            async: false,
+            url: "./api/employee/" + id
+        }).done(function (msg) {
+            console.log(msg);
+            (0, _reactDom.render)(_react2.default.createElement(FrontEnd, null), document.getElementById('target'));
+        });
+    }
+};
 
 var Employee = function (_React$Component2) {
     _inherits(Employee, _React$Component2);
@@ -9652,6 +9666,15 @@ var Employee = function (_React$Component2) {
                     'td',
                     null,
                     this.props.employeeObject['Job']
+                ),
+                _react2.default.createElement(
+                    'td',
+                    null,
+                    _react2.default.createElement(
+                        'a',
+                        { onClick: ButtonController.deleteEmployee.bind(this, this.props.employeeObject['PersonID']) },
+                        'Delete'
+                    )
                 )
             );
         }
