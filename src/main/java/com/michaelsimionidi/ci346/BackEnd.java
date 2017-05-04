@@ -55,6 +55,8 @@ return gson.toJson(finalResults);
 	}
 	@RequestMapping(value = "/api/employee/{id}", method= RequestMethod.DELETE, produces = "plain/text")
 	public String DELETEIndex() {
+		//"UPDATE employees SET em_deleted = 1 WHERE em_id = " + PersonID + " LIMIT 1"
+		
 		return "Delete";
 		
 		
