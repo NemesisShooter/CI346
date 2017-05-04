@@ -1,5 +1,7 @@
 # Programming Languages, Concurrency and Client Server Computing
 
+## I do not use WildFly for this project instead i use SpringBoot
+
 ## Setup
 This guide gives instructions on setting up this project on `Windows`.
 
@@ -20,3 +22,9 @@ To install database:
 2. In the web interface of USBwebserver click Databases and create database called "employees".
 3. Inside the database click "Import", then in the project folder go to folder called "DB" and import file called "employees.sql".
 4. The database all set and running.
+
+## Run configuration
+In eclipse create run configuration similar to this:
+https://puu.sh/vFnDz/49abbf31a1.png
+
+Use jdk 1.8.0_xxx

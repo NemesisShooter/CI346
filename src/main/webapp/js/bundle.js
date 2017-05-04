@@ -9577,29 +9577,57 @@ var EmployeeList = function (_React$Component) {
                         _react2.default.createElement(
                             'th',
                             null,
-                            'ID'
+                            _react2.default.createElement(
+                                'center',
+                                null,
+                                'ID'
+                            )
                         ),
                         _react2.default.createElement(
                             'th',
                             null,
-                            'Last Name'
+                            _react2.default.createElement(
+                                'center',
+                                null,
+                                'Last Name'
+                            )
                         ),
                         _react2.default.createElement(
                             'th',
                             null,
-                            'First Name'
+                            _react2.default.createElement(
+                                'center',
+                                null,
+                                'First Name'
+                            )
                         ),
                         _react2.default.createElement(
                             'th',
                             null,
-                            'Shift'
+                            _react2.default.createElement(
+                                'center',
+                                null,
+                                'Shift'
+                            )
                         ),
                         _react2.default.createElement(
                             'th',
                             null,
-                            'Job'
+                            _react2.default.createElement(
+                                'center',
+                                null,
+                                'Job'
+                            )
                         ),
-                        _react2.default.createElement('th', null)
+                        _react2.default.createElement(
+                            'th',
+                            null,
+                            _react2.default.createElement(
+                                'center',
+                                null,
+                                'Delete employee?'
+                            )
+                        )
                     )
                 ),
                 _react2.default.createElement(
@@ -9645,35 +9673,63 @@ var Employee = function (_React$Component2) {
                 _react2.default.createElement(
                     'td',
                     null,
-                    this.props.employeeObject['PersonID']
-                ),
-                _react2.default.createElement(
-                    'td',
-                    null,
-                    this.props.employeeObject['LastName']
-                ),
-                _react2.default.createElement(
-                    'td',
-                    null,
-                    this.props.employeeObject['FirstName']
-                ),
-                _react2.default.createElement(
-                    'td',
-                    null,
-                    this.props.employeeObject['Shift']
-                ),
-                _react2.default.createElement(
-                    'td',
-                    null,
-                    this.props.employeeObject['Job']
+                    _react2.default.createElement(
+                        'center',
+                        null,
+                        this.props.employeeObject['PersonID']
+                    )
                 ),
                 _react2.default.createElement(
                     'td',
                     null,
                     _react2.default.createElement(
-                        'a',
-                        { onClick: ButtonController.deleteEmployee.bind(this, this.props.employeeObject['PersonID']) },
-                        'Delete'
+                        'center',
+                        null,
+                        this.props.employeeObject['LastName']
+                    )
+                ),
+                _react2.default.createElement(
+                    'td',
+                    null,
+                    _react2.default.createElement(
+                        'center',
+                        null,
+                        this.props.employeeObject['FirstName']
+                    )
+                ),
+                _react2.default.createElement(
+                    'td',
+                    null,
+                    _react2.default.createElement(
+                        'center',
+                        null,
+                        this.props.employeeObject['Shift']
+                    )
+                ),
+                _react2.default.createElement(
+                    'td',
+                    null,
+                    _react2.default.createElement(
+                        'center',
+                        null,
+                        this.props.employeeObject['Job']
+                    )
+                ),
+                _react2.default.createElement(
+                    'td',
+                    null,
+                    _react2.default.createElement(
+                        'center',
+                        null,
+                        _react2.default.createElement(
+                            'button',
+                            null,
+                            _react2.default.createElement(
+                                'a',
+                                { onClick: ButtonController.deleteEmployee.bind(this, this.props.employeeObject['PersonID']) },
+                                'Delete'
+                            )
+                        )
                     )
                 )
             );

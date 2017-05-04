@@ -14,12 +14,12 @@ class EmployeeList extends React.Component {
             <table>
                 <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>Last Name</th>
-                        <th>First Name</th>
-                        <th>Shift</th>
-                        <th>Job</th>
-                        <th></th>
+                        <th><center>ID</center></th>
+                        <th><center>Last Name</center></th>
+                        <th><center>First Name</center></th>
+                        <th><center>Shift</center></th>
+                        <th><center>Job</center></th>
+                        <th><center>Delete employee?</center></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -47,12 +47,12 @@ class Employee extends React.Component {
     render() {
         return(
             <tr id={"employee-"+this.props.employeeObject['PersonID']}>
-            	<td>{this.props.employeeObject['PersonID']}</td>
-                <td>{this.props.employeeObject['LastName']}</td>
-                <td>{this.props.employeeObject['FirstName']}</td>
-                <td>{this.props.employeeObject['Shift']}</td>
-                <td>{this.props.employeeObject['Job']}</td>
-                <td><a onClick={ButtonController.deleteEmployee.bind(this, this.props.employeeObject['PersonID'])}>Delete</a></td>
+            	<td><center>{this.props.employeeObject['PersonID']}</center></td>
+                <td><center>{this.props.employeeObject['LastName']}</center></td>
+                <td><center>{this.props.employeeObject['FirstName']}</center></td>
+                <td><center>{this.props.employeeObject['Shift']}</center></td>
+                <td><center>{this.props.employeeObject['Job']}</center></td>
+                <td><center><button><a onClick={ButtonController.deleteEmployee.bind(this, this.props.employeeObject['PersonID'])}>Delete</a></button></center></td>
             </tr>
         );
     }
