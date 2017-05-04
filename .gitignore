@@ -50,3 +50,5 @@ target/**
 node_modules/**
 node_modules/.bin/**
 target/m2e-wtp/web-resources/META-INF/maven/com.michaelsimionidi.ci346/CI346/pom.properties
+target/m2e-wtp/web-resources/META-INF/maven/com.michaelsimionidi.ci346/CI346/pom.properties
+target/m2e-wtp/web-resources/META-INF/maven/com.michaelsimionidi.ci346/CI346/pom.properties

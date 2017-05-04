@@ -9546,35 +9546,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var DeleteButton = function (_React$Component) {
-    _inherits(DeleteButton, _React$Component);
-
-    function DeleteButton() {
-        _classCallCheck(this, DeleteButton);
-
-        return _possibleConstructorReturn(this, (DeleteButton.__proto__ || Object.getPrototypeOf(DeleteButton)).apply(this, arguments));
-    }
-
-    _createClass(DeleteButton, [{
-        key: 'render',
-        value: function render() {
-            return _react2.default.createElement(
-                'a',
-                { 'data-tooltip': 'Delete employee' },
-                _react2.default.createElement(
-                    'i',
-                    null,
-                    'Delete'
-                )
-            );
-        }
-    }]);
-
-    return DeleteButton;
-}(_react2.default.Component);
-
-var EmployeeList = function (_React$Component2) {
-    _inherits(EmployeeList, _React$Component2);
+var EmployeeList = function (_React$Component) {
+    _inherits(EmployeeList, _React$Component);
 
     function EmployeeList() {
         _classCallCheck(this, EmployeeList);
@@ -9604,22 +9577,22 @@ var EmployeeList = function (_React$Component2) {
                         _react2.default.createElement(
                             'th',
                             null,
-                            'ID'
+                            'ID |'
                         ),
                         _react2.default.createElement(
                             'th',
                             null,
-                            'Last Name'
+                            'Last Name |'
                         ),
                         _react2.default.createElement(
                             'th',
                             null,
-                            'First Name'
+                            'First Name |'
                         ),
                         _react2.default.createElement(
                             'th',
                             null,
-                            'Shift'
+                            'Shift |'
                         ),
                         _react2.default.createElement(
                             'th',
@@ -9640,8 +9613,8 @@ var EmployeeList = function (_React$Component2) {
     return EmployeeList;
 }(_react2.default.Component);
 
-var Employee = function (_React$Component3) {
-    _inherits(Employee, _React$Component3);
+var Employee = function (_React$Component2) {
+    _inherits(Employee, _React$Component2);
 
     function Employee() {
         _classCallCheck(this, Employee);
@@ -9687,8 +9660,8 @@ var Employee = function (_React$Component3) {
     return Employee;
 }(_react2.default.Component);
 
-var FrontEnd = function (_React$Component4) {
-    _inherits(FrontEnd, _React$Component4);
+var FrontEnd = function (_React$Component3) {
+    _inherits(FrontEnd, _React$Component3);
 
     function FrontEnd() {
         _classCallCheck(this, FrontEnd);

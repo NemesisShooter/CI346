@@ -1,14 +1,6 @@
 import React from 'react';
 import {render} from 'react-dom';
 
-class DeleteButton extends React.Component {
-	render() {
-		return(
-			<a data-tooltip="Delete employee"><i>Delete</i></a>
-		);
-	}
-}
-
 class EmployeeList extends React.Component {
     render() {
 
@@ -22,10 +14,10 @@ class EmployeeList extends React.Component {
             <table>
                 <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>Last Name</th>
-                        <th>First Name</th>
-                        <th>Shift</th>
+                        <th>ID |</th>
+                        <th>Last Name |</th>
+                        <th>First Name |</th>
+                        <th>Shift |</th>
                         <th>Job</th>
                     </tr>
                 </thead>
