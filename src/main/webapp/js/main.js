@@ -14,10 +14,10 @@ class EmployeeList extends React.Component {
             <table>
                 <thead>
                     <tr>
-                        <th>ID |</th>
-                        <th>Last Name |</th>
-                        <th>First Name |</th>
-                        <th>Shift |</th>
+                        <th>ID</th>
+                        <th>Last Name</th>
+                        <th>First Name</th>
+                        <th>Shift</th>
                         <th>Job</th>
                     </tr>
                 </thead>

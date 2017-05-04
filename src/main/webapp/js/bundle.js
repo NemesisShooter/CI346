@@ -9577,22 +9577,22 @@ var EmployeeList = function (_React$Component) {
                         _react2.default.createElement(
                             'th',
                             null,
-                            'ID |'
+                            'ID'
                         ),
                         _react2.default.createElement(
                             'th',
                             null,
-                            'Last Name |'
+                            'Last Name'
                         ),
                         _react2.default.createElement(
                             'th',
                             null,
-                            'First Name |'
+                            'First Name'
                         ),
                         _react2.default.createElement(
                             'th',
                             null,
-                            'Shift |'
+                            'Shift'
                         ),
                         _react2.default.createElement(
                             'th',
